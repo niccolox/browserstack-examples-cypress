@@ -1,7 +1,7 @@
 {
   "auth": {
-    "username": "BROWSERSTACK_USERNAME",
-    "access_key": "BROWSERSTACK_ACCESS_KEY"
+    "username": "BROWSERSTACK_DEMO_USERNAME",
+    "access_key": "BROWSERSTACK_DEMO_ACCESS_KEY"
   },
   "browsers": [
     {
