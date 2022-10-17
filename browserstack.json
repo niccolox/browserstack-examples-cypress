@@ -1,0 +1,106 @@
+{
+    "auth": {
+        "username": "BROWSERSTACK_USERNAME",
+        "access_key": "BROWSERSTACK_ACCESS_KEY"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "firefox",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "edge",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "chrome",
+            "os": "OS X Mojave",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "firefox",
+            "os": "OS X Mojave",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "edge",
+            "os": "OS X Mojave",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "chrome",
+            "os": "OS X Catalina",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "firefox",
+            "os": "OS X Catalina",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "edge",
+            "os": "OS X Catalina",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "cypress.json",
+        "project_name": "BrowserStack Cypress CLI ",
+        "build_name": "browserstack-parallel-cypress-cli",
+        "exclude": [],
+        "parallels": "5",
+        "npm_dependencies": {
+            "typescript": "4.1.2",
+            "webpack": "4.41.2",
+            "ts-loader": "^8.0.7",
+            "@cypress/webpack-preprocessor": "^5.4.8",
+            "@types/node": "8.9.4",
+            "@types/chance": "1.1.0",
+            "chance": "^1.1.7",
+            "mochawesome": "^6.2.2"
+          },
+        "package_config_options": {},
+        "headless": true
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}

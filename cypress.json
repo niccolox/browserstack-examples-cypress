@@ -1,5 +1,5 @@
 {
-  "baseUrl":"https://bstackdemo.com/",
+  "baseUrl": "https://www.amazon.com/",
   "fileServerFolder": ".",
   "testFiles": "**/*.spec.ts",
   "fixturesFolder": "cypress/fixtures",
@@ -8,16 +8,17 @@
   "supportFile": false,
   "snapshots": true,
   "trashAssetsBeforeRuns": true,
-  "reporter":"mochawesome",
+  "reporter": "mochawesome",
   "chromeWebSecurity": false,
   "pageLoadTimeout": 60000,
-  "reporterOptions":{
+  "reporterOptions": {
     "reportDir": "cypress/report/mochawesome-report",
     "reportFilename": "testReport",
-    "charts":true,
-    "overwrite":false,
-    "html":true,
-    "json":false,
-    "timestamp" : "mm/dd/yyyy_HH:MM:ss"
-  }
+    "charts": true,
+    "overwrite": false,
+    "html": true,
+    "json": false,
+    "timestamp": "mm/dd/yyyy_HH:MM:ss"
+  },
+  "projectId": "roorfr"
 }

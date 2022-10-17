@@ -35,8 +35,8 @@
   ],
   "run_settings": {
     "cypress_config_file": "cypress.json",
-    "project_name": "BrowserStack",
-    "build_name": "browserstack-examples-cypress",
+    "project_name": "BrowserStack Cypress Single Parallel Nicholas Onboarding",
+    "build_name": "browserstack-examples-parallel-cypress",
     "exclude": [],
     "cypress_version":"9.latest",
     "parallels": "5",
