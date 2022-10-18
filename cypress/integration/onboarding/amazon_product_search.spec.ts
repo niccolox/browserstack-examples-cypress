@@ -44,8 +44,6 @@ describe('Amazon E2E', function () {
     cy.wait(3000)
 
   })
-
-
   
   it('Display a list in your console of the search results', () => {
 
@@ -72,16 +70,6 @@ describe('Amazon E2E', function () {
           })          
         }
     )
-
-    // try {
-    //   //expect(imageOcrText).toContain(searchMatchTerm)
-    //   true == true;
-    //   (_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'passed',reason: 'Title matches defined searched term from OCR '}})}`);
-    // } catch {
-    //   await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'failed',reason: 'Title did not match'}})}`);
-    // }    
-
-     
 
   })
 
