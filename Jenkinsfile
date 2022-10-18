@@ -2,12 +2,12 @@
 
 pipeline {
 
-	agent {
-		// this image provides everything needed to run Cypress
-		docker {
-		image 'cypress/base:10'
-		}
-	}
+    agent {
+        docker {
+            image 'node'
+            args '-u root -v npm-cache:/root/.npm -v cypress-cache:/root/.cache '
+        }
+    }
 
     stages {
         stage('Build') {
