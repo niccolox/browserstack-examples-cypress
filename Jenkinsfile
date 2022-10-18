@@ -2,33 +2,29 @@
 
 pipeline {
 
-	agent {
-		// this image provides everything needed to run Cypress
-		docker {
-			image 'cypress/base:16.13.0'
+    agent {
+        docker {
+            image 'node'
             args '-u root'
-		}
-	}
+        }
+    }
 
     stages {
-		stage('Build') {
-		steps {
-			// there a few default environment variables on Jenkins
-			// on local Jenkins machine (assuming port 8080) see
-			// http://localhost:8080/pipeline-syntax/globals#env
-			echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
-			sh 'export CYPRESS_CACHE_FOLDER="/var/lib/jenkins/workspace/me/.cache"'
-			sh 'npm ci'
-			sh 'npm run cy:verify'
-		}
-		}
+        stage('Build') {
+         steps {
+            browserstack(credentialsId: 'cc6ebcaa-1a1c-4fdb-9381-d4041bd4d5ad') {
+               // some example test commands ...
+               sh 'npm install'
+               sh 'npm install -g browserstack-cypress-cli'
+               sh 'export CYPRESS_CACHE_FOLDER="/home/jenkins/agent/workspace/project/app/.cache/"'
+            }
+         }
+        }
         stage('Test') {
          steps {
             browserstack(credentialsId: 'cc6ebcaa-1a1c-4fdb-9381-d4041bd4d5ad') {
                // some example test commands ...
-               // not using browserstack cli
-			   // sh 'browserstack-cypress run'
-				sh 'npm run bstack-single-onboarding'
+               sh 'npm run bstack-single-onboarding'
             }
          }
         }
