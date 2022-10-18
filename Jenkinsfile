@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'node'
-            args '-u root -v npm-cache:/root/.npm -v cypress-cache:/root/.cache '
+            args '-u root -v npm-cache:/home/jenkins/agent/workspace/me/app/.npm -v cypress-cache:/home/jenkins/agent/workspace/me/app/.cache '
         }
     }
 
