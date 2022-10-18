@@ -16,7 +16,7 @@ pipeline {
                // some example test commands ...
                sh 'npm install'
                sh 'npm install -g browserstack-cypress-cli'
-               sh 'export CYPRESS_CACHE_FOLDER="/home/jenkins/agent/workspace/project/app/.cache/"'
+               sh 'export CYPRESS_CACHE_FOLDER="/home/jenkins/agent/workspace/me/app/.cache/"'
             }
          }
         }
