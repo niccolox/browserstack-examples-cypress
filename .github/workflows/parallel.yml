@@ -1,4 +1,4 @@
-name: 'BrowserStack Test'
+name: 'BrowserStack Parallel Test'
 on: [push, pull_request]
 jobs:
   ubuntu-job:
@@ -29,8 +29,8 @@ jobs:
       # - name: 'Running application under test'
       #   run: ./node_modules/.bin/http-server -p 8099 &
 
-      - name: 'Running test on BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
-        run: npm run bstack-parralel-onboarding   # See sample test script above
+      - name: 'Running test on Parallel BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
+        run: npm run bstack-parallel-onboarding   # See sample test script above
 
       - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
         uses: browserstack/github-actions/setup-local@master

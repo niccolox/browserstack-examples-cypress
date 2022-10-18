@@ -1,4 +1,4 @@
-name: 'BrowserStack Test'
+name: 'BrowserStack Single Test'
 on: [push, pull_request]
 jobs:
   ubuntu-job:
@@ -29,7 +29,7 @@ jobs:
       # - name: 'Running application under test'
       #   run: ./node_modules/.bin/http-server -p 8099 &
 
-      - name: 'Running test on BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
+      - name: 'Running Single test on BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
         run: npm run bstack-single-onboarding   # See sample test script above
 
       - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
