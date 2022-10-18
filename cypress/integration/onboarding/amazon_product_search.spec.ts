@@ -4,11 +4,8 @@
 /// <reference types="Cypress" />
 
 import { debug } from 'console';
-import Search from '../../pageObjects/search'
 
 describe('Amazon E2E', function () {
-
-  const search = new Search();
   
   it('Visit Amazon.com', () => {
 
