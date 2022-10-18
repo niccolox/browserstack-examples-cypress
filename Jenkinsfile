@@ -20,22 +20,13 @@ pipeline {
             }
          }
         }
-        stage('Test Single') {
+        stage('Test') {
          steps {
             browserstack(credentialsId: 'cc6ebcaa-1a1c-4fdb-9381-d4041bd4d5ad') {
                // some example test commands ...
                // not using browserstack cli
 			   // sh 'browserstack-cypress run'
 				sh 'npm run bstack-single-onboarding'
-            }
-         }
-        stage('Test Parallel') {
-         steps {
-            browserstack(credentialsId: 'cc6ebcaa-1a1c-4fdb-9381-d4041bd4d5ad') {
-               // some example test commands ...
-               // not using browserstac
-			   // sh 'browserstack-cypress run'
-			   sh 'npm run bstack-parallel-onboarding'
             }
          }
         }
