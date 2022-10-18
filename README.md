@@ -24,6 +24,11 @@ npm run bstack-parallel-onboarding
 ```
 ELECTRON_ENABLE_LOGGING=1 npm run cypress:run cypress/integration/onboarding/amazon_product_search.spec.ts
 ```
+## Cypress in Local Interactive mode
+
+```
+npx cypress open
+```
 
 ## Amazon Product Search
 Assignment Duration: 3 hours
