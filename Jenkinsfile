@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'cypress/base:16.13.0'
-            args '-u root -v npm-cache:/home/jenkins/agent/workspace/me/.npm -v cypress-cache:/home/jenkins/agent/workspace/me/.cache '
+            args '-u root'
         }
     }
 
@@ -16,7 +16,7 @@ pipeline {
                // some example test commands ...
                sh 'npm install'
                sh 'npm install -g browserstack-cypress-cli'
-               sh 'export CYPRESS_CACHE_FOLDER="/home/jenkins/agent/workspace/me/.cache"'
+               sh 'export CYPRESS_CACHE_FOLDER="/home/jenkins/agent/workspace/me/app/.cache"'
             }
          }
         }
