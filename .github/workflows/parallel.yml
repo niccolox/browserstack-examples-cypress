@@ -2,7 +2,7 @@ name: 'BrowserStack Parallel Test'
 on: [push, pull_request]
 jobs:
   ubuntu-job:
-    name: 'BrowserStack Single Test Cypress Nicholas Amazon Onboarding'
+    name: 'BrowserStack Parallel Test Cypress Nicholas Amazon Onboarding'
     runs-on: ubuntu-latest  # Can be self-hosted runner also
     steps:
 
