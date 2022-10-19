@@ -17,8 +17,8 @@ module.exports = (on, config) => {
   }),
   on('task', {
     // deconstruct the individual properties
-    hello({ greeting, name, feeling }) {
-      console.log('Greeting %s Name %s Feeling %s', greeting, name, feeling)  
+    consoleLog({ name, price, link }) {
+      console.log('Product Name %s Price %s Link %s', name, price, link)  
       return null
     },
   })
