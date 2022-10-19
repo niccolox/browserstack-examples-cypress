@@ -29,9 +29,12 @@ describe('Amazon Debug', function () {
   it('Display a list in your console of the search results', () => {
 
     // define product grid of search results
-    cy.get('.s-main-slot.s-result-list.s-search-results.sg-row').as('productGrid').should('be.exist');
+    cy.get('.s-main-slot.s-result-list.s-search-results.sg-row')
+      .as('productGrid').should('be.exist');
     // define product items from product grid
-    cy.get('@productGrid').find('[data-component-type="s-search-result"]').as('productItems').should('be.exist');
+    cy.get('@productGrid')
+    .find('[data-component-type="s-search-result"]')
+    .as('productItems').should('be.exist');
 
 
     cy.get('@productGrid').each(($Product) => {
@@ -40,8 +43,15 @@ describe('Amazon Debug', function () {
 
             const Product = $el
 
+            const pricetxt = "13"
+            cy.task('log', pricetxt)
+            // cy.get('@pricetext').then(pricetext => {
+            //    cy.task('log', pricetxt)
+            // });
+
             cy.get('@productItems')
             .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
+            .children().find('a-size-base-plus a-color-base a-text-normal')
             .as('productItemsTextAlias')
             .should('be.exist')
             .invoke('text')
@@ -50,19 +60,34 @@ describe('Amazon Debug', function () {
               cy.wrap(productname).as('productname')
             }));
 
-            cy.get('@productItems')
-            .find('.a-price-whole')
-            .as('productItemsPriceAlias')
-            .should('be.exist')
-            .invoke('text')
-            .then((productItemsPriceAlias => {
-              let pricetext = productItemsPriceAlias;
-              cy.wrap(pricetext).as('pricetext')
-            }))
+            // cy.get('@productItems')
+            // .find('.a-price-whole')
+            // .as('productItemsPriceAlias')
+            // .should('be.exist')
+            // .invoke('text')
+            // .then((productItemsPrice => {
+            //   let pricetext = productItemsPrice;
+            //   cy.wrap(pricetext).as('pricetext')
+            // }))
+
+// https://stackoverflow.com/questions/59184571/how-to-save-a-variable-text-to-use-later-in-cypress-test
+            // it('Current Port change', () => {
+            //   cy.get('#viewport').find('div[id=message]').then(message => {
+            //     let wags = message;
+            //     cy.wrap(wags).as('wags')
+            //   });
+            
+            //   cy.get('@wags').then(wags => {
+            //      expect(wags).to.contain("Portsmouth")
+            //   });
+            // });
 
             // @todo bind the productname, producttext, linktext from the functions above and pass them to the consoleLog task_object
+            // let pricewag = cy.get('@pricetext')
+            // let prices = "18";
+            // cy.wrap(prices).as('prices')
 
-            const task_object = { name: 'productname', price: 'pricetext', link: 'linktext' }
+            const task_object = { name: 'productname', price: pricetxt, link: 'linktext' }
             cy.wrap(task_object).as('task_object')
             cy.get('@task_object').then(task_object => {
                 cy.task('consoleLog', task_object)

@@ -10,7 +10,7 @@ module.exports = on => {
 module.exports = (on, config) => {
   on('task', {
     log(message) {
-      console.log('looking for title "%$" in the database', message)
+      console.log('looking Product %s in the logs', message)
   
       return null
     },

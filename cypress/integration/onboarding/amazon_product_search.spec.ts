@@ -83,26 +83,42 @@ describe('Amazon E2E', function () {
               .then(() => {
                 // now capture it again
                 const productItemText = (Product.text())
-                cy.task('hello', { greeting: productItemText, name: 'World', feeling: 'Awesome' })
+                cy.wrap(productItemText).as('productItemText')
+                // cy.task('consoleLog', { name: productItemText, price: 'World', link: 'Awesome' })
               })
-            cy.wrap(Product)
-              .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
-              .first()
-              .invoke('attr', 'href')
-              .as('productLink')
-              .then(cy.log)
-            cy.log(`Product Price`)
-            cy.wrap(Product)
-              .find('.a-price-whole')
-              .as('productPrice')
-              .invoke('text')
-              .then(cy.log)
-            cy.log(`Product Image`)
-            cy.wrap(Product)
-              .find('.s-image')
-              .as('productImage')
-              .invoke('text')
-              .then(cy.log)
+              cy.get('@productItemText').then(productItemText => {
+                cy.task('log', productItemText)
+              });
+              
+              const task_object = { name: 'productname', price: 'productItemText', link: 'linktext' }
+              cy.wrap(task_object).as('task_object')
+              cy.get('@task_object').then(task_object => {
+                  cy.task('consoleLog', task_object)
+               });             
+
+              // cy.wrap(Product)
+            //   .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
+            //   .first()
+            //   .invoke('attr', 'href')
+            //   .as('productLink')
+            //   .then(() => {
+            //     // now capture it again
+            //     const productItemLink = (Product.text())
+            //     cy.task('consoleLog', { name: 'productItemText', price: 'World', link: productItemLink })
+            //   })
+ 
+            // cy.log(`Product Price`)
+            // cy.wrap(Product)
+            //   .find('.a-price-whole')
+            //   .as('productPrice')
+            //   .invoke('text')
+            //   .then(cy.log)
+            // cy.log(`Product Image`)
+            // cy.wrap(Product)
+            //   .find('.s-image')
+            //   .as('productImage')
+            //   .invoke('text')
+            //   .then(cy.log)
             })          
         }
     )
