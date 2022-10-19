@@ -85,16 +85,19 @@ describe('Amazon E2E', function () {
                 const productItemText = (Product.text())
                 cy.wrap(productItemText).as('productItemText')
                 // cy.task('consoleLog', { name: productItemText, price: 'World', link: 'Awesome' })
+                const task_object = { name: 'productname', price: productItemText, link: 'linktext' }
+                cy.wrap(task_object).as('task_object')
               })
-              cy.get('@productItemText').then(productItemText => {
+              // cy.get('@productItemText').then(productItemText => {
                 cy.task('log', productItemText)
-              });
+//                const task_object = { name: 'productname', price: productItemText, link: 'linktext' }
+                // cy.wrap(task_object).as('task_object')
+                cy.get('@task_object').then(task_object => {
+                    cy.task('consoleLog', task_object)
+                 });  
+              // });
               
-              const task_object = { name: 'productname', price: 'productItemText', link: 'linktext' }
-              cy.wrap(task_object).as('task_object')
-              cy.get('@task_object').then(task_object => {
-                  cy.task('consoleLog', task_object)
-               });             
+           
 
               // cy.wrap(Product)
             //   .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
