@@ -1,0 +1,14 @@
+   // https://glebbahmutov.com/blog/powerful-cy-task/
+    // https://stackoverflow.com/questions/59626407/cypress-setting-a-variable-from-the-result-of-a-task
+    // https://docs.cypress.io/api/commands/task#Arguments
+    // https://stackoverflow.com/questions/63120556/how-to-extract-and-use-a-string-value-returned-from-cy-wrap
+    // https://docs.cypress.io/guides/core-concepts/variables-and-aliases#Variables
+    // https://docs.cypress.io/api/commands/invoke#Syntax
+    // https://stackoverflow.com/questions/50730959/how-to-use-values-from-dom-in-cypress-test
+    // https://stackoverflow.com/questions/52491253/how-to-get-div-text-value-in-cypress-test-using-jquery
+    // https://stackoverflow.com/questions/4816099/chrome-sendrequest-error-typeerror-converting-circular-structure-to-json
+    // https://glebbahmutov.com/blog/powerful-cy-task/
+    // https://stackoverflow.com/questions/69264220/get-property-from-json-response-in-cypress
+    // https://docs.cypress.io/guides/core-concepts/variables-and-aliases#Closures
+    // https://glebbahmutov.com/blog/powerful-cy-task/
+    // https://stackoverflow.com/questions/59184571/how-to-save-a-variable-text-to-use-later-in-cypress-test
