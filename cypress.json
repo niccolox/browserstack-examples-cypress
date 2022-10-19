@@ -4,7 +4,6 @@
   "testFiles": "**/*.spec.ts",
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "cypress/integration",
-  "pluginsFile": false,
   "supportFile": false,
   "snapshots": true,
   "trashAssetsBeforeRuns": true,
