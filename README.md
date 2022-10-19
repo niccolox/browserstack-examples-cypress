@@ -22,6 +22,7 @@ ELECTRON_ENABLE_LOGGING=1 npm run cypress:run cypress/integration/onboarding/ama
 
 ```
 npx cypress open
+npx cypress open | grep "Greeting"
 ```
 
 ## Amazon Product Search
@@ -97,7 +98,6 @@ cypress/integration/onboarding
 cypress/integration/onboarding
 ```typescript
   it('Display a list in your console of the search results', () => {
-
     cy.get('.s-main-slot.s-result-list.s-search-results.sg-row').as('productGrid').should('be.exist');
     cy.get('@productGrid').find('[data-component-type="s-search-result"]').as('productItems').should('be.exist');
 
@@ -109,6 +109,8 @@ cypress/integration/onboarding
             cy.log(`Product Text`)
             cy.wrap(Product)
               .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal').as('productText').invoke('text').then(cy.log)
+            cy.wrap(Product)
+              .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal').as('productText').invoke('text').then(console.log)
             cy.log(`Product Link`)
             cy.wrap(Product)
               .find('.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal').first().invoke('attr', 'href').as('productLink').then(cy.log)
